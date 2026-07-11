@@ -4,7 +4,7 @@
  */
 const CONFIG = {
     birthdayName: "Anjali",
-    birthdayDate: "July 13, 2026 00:00:00", // Format: Month DD, YYYY HH:MM:SS
+    birthdayDate: "July 11, 2026 22:29:00", // Format: Month DD, YYYY HH:MM:SS
     typingMessages: [
         "Dear ANJALI ,",
         "Happy Birthday to the most beautiful girl I know.",
