@@ -135,13 +135,19 @@ function setupCountdown() {
         document.getElementById('minutes').innerText = m < 0 ? 0 : m;
         document.getElementById('seconds').innerText = s < 0 ? 0 : s;
 
-        if (gap < 0) {
-            document.getElementById('countdown').innerHTML = "🎂 Happy Birthday!";
+        if (gap <= 0) {
             clearInterval(timer);
+
+            document.getElementById('countdown').innerHTML =
+                "<h2>🎂 Happy Birthday! ❤️</h2>";
+
+            document.getElementById('after-countdown')
+                .classList.remove('hidden');
+
+            
         }
     }, 1000);
 }
-
 // --- GALLERY LOGIC ---
 function setupGallery() {
     const slider = document.querySelector('.slider');
