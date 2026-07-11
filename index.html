@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday! ❤️</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Confetti Library -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+    <!-- 1. Welcome Screen (Overlay) -->
+    <div id="welcome-screen">
+        <div class="welcome-content">
+            <h1 class="fade-in">Happy Birthday ❤️</h1>
+            <h2 class="slide-up">To Someone Very Special</h2>
+            <p class="fade-in">A digital gift crafted with love just for you.</p>
+            <button id="start-button" class="pulse">Open Your Surprise</button>
+        </div>
+    </div>
+
+    <!-- Background Music (Hidden) -->
+    <audio id="bg-music" loop>
+        <source src="assets/music/birthday-song.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Music Toggle Button -->
+    <button id="music-toggle" class="hidden">
+        <i class="fas fa-music"></i>
+    </button>
+
+    <!-- 2. Navigation Bar -->
+    <nav id="navbar" class="hidden">
+        <ul>
+            <li><a href="#home"><i class="fas fa-home"></i></a></li>
+            <li><a href="#message"><i class="fas fa-heart"></i></a></li>
+            <li><a href="#gallery"><i class="fas fa-images"></i></a></li>
+            <li><a href="#envelope-section"><i class="fas fa-envelope"></i></a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content (Initially Hidden) -->
+    <main id="main-content" class="hidden">
+        
+        <!-- Hero / Countdown Section -->
+        <section id="home" class="full-screen">
+            <div class="glass-card">
+                <h1 id="celebration-name">Happy Birthday!</h1>
+                <div id="countdown">
+                    <div class="time-box"><span id="days">00</span><p>Days</p></div>
+                    <div class="time-box"><span id="hours">00</span><p>Hours</p></div>
+                    <div class="time-box"><span id="minutes">00</span><p>Mins</p></div>
+                    <div class="time-box"><span id="seconds">00</span><p>Secs</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Birthday Message Section -->
+        <section id="message" class="padding-section">
+            <div class="glass-card">
+                <div id="typing-container">
+                    <!-- Typing animation happens here -->
+                    <p id="birthday-text"></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Photo Gallery Section -->
+        <section id="gallery" class="padding-section">
+            <h2 class="section-title">your Memories</h2>
+            <div class="slider-container">
+                <div class="slider">
+                    <!-- Images will be injected by JS -->
+                </div>
+                <button class="prev" onclick="moveSlider(-1)">&#10094;</button>
+                <button class="next" onclick="moveSlider(1)">&#10095;</button>
+            </div>
+        </section>
+
+        <!-- Love Letter / Envelope Section -->
+        <section id="envelope-section" class="full-screen">
+            <div class="envelope-wrapper">
+                <div class="envelope" onclick="openEnvelope()">
+                    <div class="flap"></div>
+                    <div class="body"></div>
+                    <div class="letter">
+                        <p id="letter-text">Loading message...</p>
+                    </div>
+                </div>
+            </div>
+            <p class="instruction">Tap the envelope to open</p>
+        </section>
+
+        <!-- Final Celebration Section -->
+        <section id="final-wish" class="padding-section">
+            <div class="glass-card text-center">
+                <h2 class="glow">Happy Birthday ❤️</h2>
+                <p>May all your dreams come true and your day be filled with endless joy.</p>
+                <div class="final-icons">
+                    <i class="fas fa-cake-candles bounce"></i>
+                    <i class="fas fa-gift bounce"></i>
+                    <i class="fas fa-clover bounce"></i>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Elements for Background Animation -->
+    <div id="hearts-container"></div>
+    <div id="balloons-container"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
